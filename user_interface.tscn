@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bff2pu37d0xww"]
+
+[ext_resource type="FontFile" uid="uid://b6tpwid7k3lvg" path="res://fonts/Montserrat-Medium.ttf" id="1_e67sd"]
+[ext_resource type="Script" path="res://user_interface.gd" id="2_qja8y"]
+
+[sub_resource type="Theme" id="Theme_2rcdh"]
+default_font = ExtResource("1_e67sd")
+default_font_size = 22
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2rcdh")
+script = ExtResource("2_qja8y")
+
+[node name="Header" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+
+[node name="Score" type="Label" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score : 0"
+
+[node name="Retry" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.403922)
+
+[node name="RetryLabel" type="Label" parent="Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -18.0
+offset_right = 34.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press enter for retry"
