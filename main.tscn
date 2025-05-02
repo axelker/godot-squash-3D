@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwbitcukl4nnj"]
+[gd_scene load_steps=12 format=3 uid="uid://bwbitcukl4nnj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_eq1mw"]
 [ext_resource type="PackedScene" uid="uid://mqpxt4nra5rj" path="res://player.tscn" id="1_klcgw"]
@@ -11,6 +11,9 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sdqsx"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6xct"]
+albedo_color = Color(0.716257, 0.528835, 0.158673, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fklff"]
 albedo_color = Color(0.803922, 0, 0, 1)
@@ -43,6 +46,7 @@ shape = SubResource("BoxShape3D_dc3ui")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_sdqsx")
+surface_material_override/0 = SubResource("StandardMaterial3D_w6xct")
 
 [node name="Player" parent="." instance=ExtResource("1_klcgw")]
 
