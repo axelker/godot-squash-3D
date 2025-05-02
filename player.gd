@@ -41,7 +41,12 @@ func _physics_process(delta: float) -> void:
 func handle_collision(collision:KinematicCollision3D):
 	if collision == null:
 		return;
-	if collision.get_collider().is_in_group("ennemies") and Vector3.UP.dot(collision.get_normal()) > 0.1:
+	var collider = collision.get_collider();
+	
+	if collider == null:
+		return;
+
+	if collider.is_in_group("ennemies") and Vector3.UP.dot(collision.get_normal()) > 0.1:
 		var mob = collision.get_collider();
 		mob.squash()
 		velocity.y = bounce_impulse
